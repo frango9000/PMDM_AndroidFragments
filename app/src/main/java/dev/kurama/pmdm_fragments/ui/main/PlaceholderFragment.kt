@@ -15,10 +15,14 @@ import dev.kurama.pmdm_fragments.R
  */
 class PlaceholderFragment : Fragment() {
 
+
+
     private lateinit var pageViewModel: PageViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        //establecemos el view model como fuente de datos de todos los fragments a crear
         pageViewModel = ViewModelProviders.of(this).get(PageViewModel::class.java).apply {
             setIndex(arguments?.getInt(ARG_SECTION_NUMBER) ?: 1)
         }
